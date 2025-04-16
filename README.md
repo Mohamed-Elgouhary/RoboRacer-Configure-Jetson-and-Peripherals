@@ -124,4 +124,11 @@ In the build instruction we applied an SSD NVMe on to the Jetson NX. We will now
 ![Screenshot from 2025-04-16 19-22-48](https://github.com/user-attachments/assets/b922633a-92f0-4ce5-a2d6-1fb450f59a5a)
 <p align="center"><strong>Set the volume name and set its type to Ext4</strong></p>
 
+![Screenshot from 2025-04-16 19-24-46](https://github.com/user-attachments/assets/f542dbcf-ab33-4b3d-b14f-77a72898650a)
+<p align="center"><strong>Notice that the device is /dev/nvme0n1p1</strong></p>
 
+**2. Disk Setup**
+
+Open a terminal
+
+`$ git clone https://github.com/jetsonhacks/rootOnNVMe`
