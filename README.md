@@ -1,4 +1,3 @@
-# roboracer-1.-Configuring-the-NVIDIA-Jetson-NX
 
 # 1. Configuring the NVIDIA Jetson NX
 
@@ -186,3 +185,5 @@ sudo swapon /var/swapfile
 sudo bash -c 'echo "/var/swapfile swap swap defaults 0 0" >> /etc/fstab'
 ```
 
+# References:
+[Roboracer Official Website](https://roboracer.ai/)
