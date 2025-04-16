@@ -129,6 +129,17 @@ In the build instruction we applied an SSD NVMe on to the Jetson NX. We will now
 
 **2. Disk Setup**
 
-Open a terminal
-
+On the JetsonHacks account on Github, there is a repository rootOnNVMe. Clone the repository:
 `$ git clone https://github.com/jetsonhacks/rootOnNVMe`
+
+and switch over to that repository’s directory:
+`$ cd rootOnNVMe`
+
+Next, copy the rootfs of the eMMC/SD card to the SSD
+`$ ./copy-rootfs-ssd.sh`
+
+Finally, we will add a service which will run a script when the system starts up. The script will “pivot the root” to the SSD so that the system will run from the SSD.
+`$ ./setup-service.sh`
+
+After setting up the service, reboot for the changes to take effect.
+`$ sudo reboot`
