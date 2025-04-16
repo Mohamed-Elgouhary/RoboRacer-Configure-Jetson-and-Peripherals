@@ -154,3 +154,35 @@ After setting up the service, reboot for the changes to take effect.
 ```bash
 sudo reboot
 ```
+# 3. Updating Packages
+
+All further steps assume that your NVIDIA Jetson Xavier NX Developer Kit is connected to the internet. You can execute all the commands directly in the terminal application of the NVIDIA Jetson. Now we are updating the Ubuntu system on the Jetson NX.
+
+1. To update the list of available packages, run
+```bash
+sudo apt update
+```
+
+2. To install all available updates, run
+```bash
+sudo apt full-upgrade
+```
+
+3. Once all packages have been upgraded, run 
+```bash
+sudo reboot
+```
+to restart the Developer Kit and apply any changes.
+
+# 4. Creating a Swapfile
+
+Run the following commands to create a swapfile which can help with memory-intensive tasks
+
+```bash
+sudo fallocate -l 4G /var/swapfile
+sudo chmod 600 /var/swapfile
+sudo mkswap /var/swapfile
+sudo swapon /var/swapfile
+sudo bash -c 'echo "/var/swapfile swap swap defaults 0 0" >> /etc/fstab'
+```
+
