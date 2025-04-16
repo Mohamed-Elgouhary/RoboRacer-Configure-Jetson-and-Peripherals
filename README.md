@@ -131,7 +131,9 @@ In the build instruction we applied an SSD NVMe on to the Jetson NX. We will now
 
 On the JetsonHacks account on Github, there is a repository rootOnNVMe. Clone the repository:
 
-<pre> $ git clone https://github.com/jetsonhacks/rootOnNVMe </pre>
+'bash
+git clone https://github.com/jetsonhacks/rootOnNVMe
+`
 
 and switch over to that repository’s directory:
 `$ cd rootOnNVMe`
