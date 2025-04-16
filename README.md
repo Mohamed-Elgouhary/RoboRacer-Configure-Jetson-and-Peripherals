@@ -45,3 +45,83 @@ The setup of the Nvidia Jetson NX is easy and convenient. NVIDIA provides a deta
 5. Once the zip file has finished downloading, extract it. This will create a new file, sd-blob.img. This is the file that contains the NVIDIA Jetson Xavier NX Developer Kit software and operating system.
 6. Put the acquired microSD card into the SD card reader/writer and then plug the SD card reader into the Host PC.
 7. Download, install, and launch SD card image burning software [Etcher](https://etcher.balena.io/).
+
+![image](https://github.com/user-attachments/assets/59c4df0e-bdac-4edc-ba89-09766c235934)
+<p align="center"><strong>SD card burner software Etcher.</strong></p>
+
+8. Choose Flash the file and select the image you downloaded from NVIDIA. When the file selection window comes up, choose the sd-XXXX.img file extracted earlier.
+
+![image](https://github.com/user-attachments/assets/fd0d230b-f4dd-49b0-af84-4a9560487e7e)
+<p align="center"><strong>File selection window.</strong></p>
+
+9. For the “target” device, choose the microSD card in the microSD card reader/writer.
+
+![image](https://github.com/user-attachments/assets/0187970b-9f75-4848-8249-16798c552291)
+<p align="center">Target selection window.</strong></p>
+
+10. Click “Flash!” (or similar for your software). This process will take some time and is mainly depending on the speed write speed of your microSD card (20+ minutes).
+
+![image](https://github.com/user-attachments/assets/5f4772fe-c903-4047-a68d-ec37f3fec4c0)
+<p align="center">Flashing process.</strong></p>
+
+11. Once the flashing process is complete, verify that any activity lights on your SD card reader/writer are no longer blinking. Properly un-mount/eject the microSD card before physically removing it from the reader/writer.
+12. Now its time to bring the software on the NVIDIA Jetson NX. Insert the flashed microSD card into the NVIDIA Jetson Xavier NX module with the label facing up. Push the microSD card all the way in until it locks into place with a small click. The edge of the microSD card should be flush with the PCB of the NVIDIA Jetson Xavier NX module and carrier board.
+
+![image](https://github.com/user-attachments/assets/0328444e-1031-4b8a-ba06-4b7784413ebd)
+<p align="center"><strong>Insert SD card.</strong></p>
+
+![image](https://github.com/user-attachments/assets/f622b614-1c45-472e-b0eb-da48a0c3671f)
+<p align="center">SD card flush.</strong></p>
+
+13. When you have entered the microSD card you can power up the Jetson NX on the RoboRacer car for the first time. First of all plug the following into the Jetson NX:
+    - USB Port: A keyboard
+    - USB Port: A mouse
+    - HDMI Port: An external monitor
+
+14. Now you can provide energy for the RoboRacer car. You either do this with the battery on the car or plug in an external power supply that provides 16V. The Jetson Xavier NX Developer Kit will power on and boot automatically after you provided the power supply.
+
+**Important**
+
+The barrel jack on the powerboard is only rated for 9.0V - 16.0V. The power supplies that come with the Jetson NX are 19V and therefore have a higher voltage. Do not plug those in. Otherwise you will destroy your powerboard.
+
+15. A green LED next to the Micro-USB connector will light as soon as the developer kit powers on. When you boot the first time, the Jetson Xavier NX Developer Kit will take you through some initial setup, including:
+
+  - Review and accept NVIDIA Jetson software EULA
+  - Select system language, keyboard layout, and time zone
+  - Connect to Wireless network
+  - Create username, password, and computer name
+  - Log in
+
+16. After logging in you should see the following screen. Congratulations, your NVIDIA Jetson NX on your RoboRacer car is ready to go.
+
+![image](https://github.com/user-attachments/assets/1c618b97-bd03-4836-a739-6a5e77131e68)
+<p align="center"><strong>First boot of the NVIDIA Jetson NX.</strong></p>
+
+# 2. Run Jetson NX from SSD
+
+In the build instruction we applied an SSD NVMe on to the Jetson NX. We will now make use of this SSD by switching the rootfs to point to the SSD. In effect, the system will now run from the SSD, the SD card is only there to boot the system. Therefore everything you install on your system will automatically installed on the SSD.
+
+**1. Format SSD**
+
+![Screenshot from 2025-04-16 19-12-14](https://github.com/user-attachments/assets/1aa9f00e-bb26-4acd-b2d1-b583e54588d5)
+<p align="center"><strong>Open Disks</strong></p>
+
+![Screenshot from 2025-04-16 19-14-08](https://github.com/user-attachments/assets/5ebf8dd6-c847-42f2-bbb3-692d9701d729)
+<p align="center"><strong>Choose Format Disk ...</strong></p>
+
+![Screenshot from 2025-04-16 19-15-27](https://github.com/user-attachments/assets/de8051c9-0a9c-4f6d-8683-f5d8362a9fb7)
+<p align="center"><strong>Click Format...</strong></p>
+
+![Screenshot from 2025-04-16 19-17-09](https://github.com/user-attachments/assets/a7caf2ea-6e36-45c9-9a83-c0f7afaa3de0)
+<p align="center"><strong>Click Format</strong></p>
+
+![Screenshot from 2025-04-16 19-18-22](https://github.com/user-attachments/assets/55f1959d-4f20-4ef8-a956-d40dbf4ff7bb)
+<p align="center"><strong>Click + button to add partition</strong></p>
+
+![Screenshot from 2025-04-16 19-19-42](https://github.com/user-attachments/assets/7ec55e7d-0087-44e9-a6c6-eab8cdd9aa3d)
+<p align="center"><strong>Make 16 GB Free Space</strong></p>
+
+![Screenshot from 2025-04-16 19-22-48](https://github.com/user-attachments/assets/b922633a-92f0-4ce5-a2d6-1fb450f59a5a)
+<p align="center"><strong>Set the volume name and set its type to Ext4</strong></p>
+
+
