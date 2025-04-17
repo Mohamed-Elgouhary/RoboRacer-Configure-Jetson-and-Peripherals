@@ -185,5 +185,13 @@ sudo swapon /var/swapfile
 sudo bash -c 'echo "/var/swapfile swap swap defaults 0 0" >> /etc/fstab'
 ```
 
+# 5. Using a Remote Desktop
+
+Although we now have SSH access to the car, it is still inconvenient to run a GUI application on the car remotely. In this section, we’ll go over how to set up a remote desktop so you can easily use GUI applications like RViz. In our example, we’ll use NoMachine. If you’re an advanced user and can find another remote desktop solution that works on the car, feel free to use it.
+
+First, download NoMachine for your client/host computer’s specific OS [here](https://downloads.nomachine.com/). Then, while your Jetson is still connected to the monitor, install NoMachine following this guide [here](https://kb.nomachine.com/AR02R01074). Note that the guide uses Jetson Nano; the same applies to Jetson Xavier NX. You only have to follow the Install NoMachine section and don’t have to set up an alternative desktop environment.
+
+After NoMachine is installed on both sides, go to your pit/host’s NoMachine, click Add to configure your connection, and insert the IP address of the Jetson. You’ll only need to change the Host field. Click connect to connect to the Jetson. You’ll then be prompted for the Jetson’s username and password to log in. Now you should have remote desktop access to the Jetson.
+
 # References:
 [Roboracer Official Website](https://roboracer.ai/)
