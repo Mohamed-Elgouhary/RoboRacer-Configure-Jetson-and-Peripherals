@@ -19,7 +19,7 @@
 JetPack 5.0 Developer Preview is released on Apr. 7, 2022, with support for AGX Xavier, Xavier NX, and AGX Orin. We highly recommend flashing your Xavier with JetPack 5.0 since L4T 34.1 uses Ubuntu 20.04.
 
 **1. Flash Jetson NX with Software**
-The setup of the Nvidia Jetson NX is easy and convenient. NVIDIA provides a detailed step-by-step guide for getting started with the NVIDIA Jetpack Software on the NVIDIA Jetson NX. You can either follow this documentation here or follow our step-by-step introduction below.
+The setup of the Nvidia Jetson NX is easy and convenient. NVIDIA provides a detailed step-by-step guide for getting started with the NVIDIA Jetpack Software on the NVIDIA Jetson NX. You can either go ahead and follow this documentation here or follow our step-by-step introduction below.
 
 1. Go to the NVIDIA Developers Download Center at https://developer.nvidia.com/downloads and click Jetson.
 
@@ -58,13 +58,13 @@ The setup of the Nvidia Jetson NX is easy and convenient. NVIDIA provides a deta
 ![image](https://github.com/user-attachments/assets/0187970b-9f75-4848-8249-16798c552291)
 <p align="center">Target selection window.</strong></p>
 
-10. Click “Flash!” (or similar for your software). This process will take some time and is mainly depending on the speed write speed of your microSD card (20+ minutes).
+10. Click “Flash!” (or similar for your software). This process will take some time and is mainly dependent on the write speed of your microSD card (20+ minutes).
 
 ![image](https://github.com/user-attachments/assets/5f4772fe-c903-4047-a68d-ec37f3fec4c0)
 <p align="center">Flashing process.</strong></p>
 
-11. Once the flashing process is complete, verify that any activity lights on your SD card reader/writer are no longer blinking. Properly un-mount/eject the microSD card before physically removing it from the reader/writer.
-12. Now its time to bring the software on the NVIDIA Jetson NX. Insert the flashed microSD card into the NVIDIA Jetson Xavier NX module with the label facing up. Push the microSD card all the way in until it locks into place with a small click. The edge of the microSD card should be flush with the PCB of the NVIDIA Jetson Xavier NX module and carrier board.
+11. Once the flashing process is complete, verify that any activity lights on your SD card reader/writer are no longer blinking. Properly unmount/eject the microSD card before physically removing it from the reader/writer.
+12. Now it's time to install the software on the NVIDIA Jetson NX. Insert the flashed microSD card into the NVIDIA Jetson Xavier NX module with the label facing up. Push the microSD card in until it locks into place with a small click. The edge of the microSD card should be flush with the PCB of the NVIDIA Jetson Xavier NX module and carrier board.
 
 ![image](https://github.com/user-attachments/assets/0328444e-1031-4b8a-ba06-4b7784413ebd)
 <p align="center"><strong>Insert SD card.</strong></p>
@@ -72,33 +72,33 @@ The setup of the Nvidia Jetson NX is easy and convenient. NVIDIA provides a deta
 ![image](https://github.com/user-attachments/assets/f622b614-1c45-472e-b0eb-da48a0c3671f)
 <p align="center">SD card flush.</strong></p>
 
-13. When you have entered the microSD card you can power up the Jetson NX on the RoboRacer car for the first time. First of all plug the following into the Jetson NX:
+13. When you have inserted the microSD card, you can power up the Jetson NX on the RoboRacer car for the first time. First of all, plug the following into the Jetson NX:
     - USB Port: A keyboard
     - USB Port: A mouse
     - HDMI Port: An external monitor
 
-14. Now you can provide energy for the RoboRacer car. You either do this with the battery on the car or plug in an external power supply that provides 16V. The Jetson Xavier NX Developer Kit will power on and boot automatically after you provided the power supply.
+14. Now you can provide energy for the RoboRacer car. You either do this with the battery on the car or plug in an external power supply that provides 16V. The Jetson Xavier NX Developer Kit will power on and boot automatically after you provide the power supply.
 
 **Important**
 
-The barrel jack on the powerboard is only rated for 9.0V - 16.0V. The power supplies that come with the Jetson NX are 19V and therefore have a higher voltage. Do not plug those in. Otherwise you will destroy your powerboard.
+The barrel jack on the powerboard is only rated for 9.0V - 16.0V. The power supplies that come with the Jetson NX are 19V and therefore have a higher voltage. Do not plug those in. Otherwise, you will destroy your powerboard.
 
 15. A green LED next to the Micro-USB connector will light as soon as the developer kit powers on. When you boot the first time, the Jetson Xavier NX Developer Kit will take you through some initial setup, including:
 
-  - Review and accept NVIDIA Jetson software EULA
+  - Review and accept the NVIDIA Jetson software EULA
   - Select system language, keyboard layout, and time zone
-  - Connect to Wireless network
-  - Create username, password, and computer name
+  - Connect to the Wireless network
+  - Create a username, password, and computer name
   - Log in
 
-16. After logging in you should see the following screen. Congratulations, your NVIDIA Jetson NX on your RoboRacer car is ready to go.
+16. After logging in, you should see the following screen. Congratulations, your NVIDIA Jetson NX on your RoboRacer car is ready to go.
 
 ![image](https://github.com/user-attachments/assets/1c618b97-bd03-4836-a739-6a5e77131e68)
 <p align="center"><strong>First boot of the NVIDIA Jetson NX.</strong></p>
 
 # 2. Run Jetson NX from SSD
 
-In the build instruction we applied an SSD NVMe on to the Jetson NX. We will now make use of this SSD by switching the rootfs to point to the SSD. In effect, the system will now run from the SSD, the SD card is only there to boot the system. Therefore everything you install on your system will automatically installed on the SSD.
+In the build instructions, we applied an SSD NVMe to the Jetson NX. We will now make use of this SSD by switching the rootfs to point to the SSD. In effect, the system will now run from the SSD, the SD card is only there to boot the system. Therefore, everything you install on your system will automatically be installed on the SSD.
 
 **1. Format SSD**
 
@@ -131,7 +131,7 @@ In the build instruction we applied an SSD NVMe on to the Jetson NX. We will now
 On the JetsonHacks account on Github, there is a repository rootOnNVMe. Clone the repository:
 
 ```bash
-git clone https://github.com/jetsonhacks/rootOnNVMe
+git clone https://github.com/Mohamed-Elgouhary/rootOnNVMe.git
 ```
 
 and switch over to that repository’s directory:
@@ -144,7 +144,7 @@ Next, copy the rootfs of the eMMC/SD card to the SSD
 ./copy-rootfs-ssd.sh
 ```
 
-Finally, we will add a service which will run a script when the system starts up. The script will “pivot the root” to the SSD so that the system will run from the SSD.
+Finally, we will add a service that will run a script when the system starts up. The script will “pivot the root” to the SSD so that the system will run from the SSD.
 ```bash
 ./setup-service.sh
 ```
@@ -175,7 +175,7 @@ to restart the Developer Kit and apply any changes.
 
 # 4. Creating a Swapfile
 
-Run the following commands to create a swapfile which can help with memory-intensive tasks
+Run the following commands to create a swap file, which can help with memory-intensive tasks
 
 ```bash
 sudo fallocate -l 4G /var/swapfile
